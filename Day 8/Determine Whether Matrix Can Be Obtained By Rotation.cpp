@@ -10,7 +10,7 @@ public:
             if(mat[i][j]!=target[j][n-i-1])
               c1=0;
         }
-    }   
+    }   if(c1==1)return true;
      for(int i=0;i<mat.size();i++)
     {
         for(int j=0;j<mat.size();j++)
@@ -18,7 +18,7 @@ public:
             if(mat[i][j]!=target[n-i-1][n-j-1])
               c2=0;
         }
-    }   
+    }    if(c2==1)return true;
         for(int i=0;i<mat.size();i++)
     {
         for(int j=0;j<mat.size();j++)
@@ -26,10 +26,8 @@ public:
             if(mat[i][j]!=target[n-j-1][i])
               c3=0;
         }
-    }  
+    }   if(c3==1)return true;
            
-    c1=c1+c2+c3;
-       if(c1!=0) return true;
-       else return false;
+    return false;
     }
 };
